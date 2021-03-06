@@ -18,7 +18,7 @@ public class GoogleAuth: CAPPlugin {
         guard let clientId = dict["CLIENT_ID"] as? String else {return}
         googleSignIn.clientID = clientId;
         googleSignIn.delegate = self;
-        googleSignIn.presentingViewController = bridge.viewController;
+        googleSignIn.presentingViewController = bridge?.viewController;
         if let serverClientId = getConfigValue("serverClientId") as? String {
             googleSignIn.serverClientID = serverClientId;
         }
